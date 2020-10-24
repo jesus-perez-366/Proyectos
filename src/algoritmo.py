@@ -1,6 +1,6 @@
 import random
 from string import ascii_uppercase
-from python3 import dibujo
+import dibujo as hl
 ascii_uppercase += 'Ñ'
 alphab=[i for i in ascii_uppercase]
 alphab_not_use=alphab

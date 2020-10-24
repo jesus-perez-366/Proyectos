@@ -1,6 +1,7 @@
 import random
 from string import ascii_uppercase
 import src.algoritmo as alg
+from src import dibujo
 User_name=input("Ingresar su Nombre: ")
 print(f"Es momento de jugar {User_name}, espero que este preparado para el reto")
 print("Let`s Goooooo")
