@@ -16,21 +16,28 @@ def look_alpha_not_use(letter, alphab_not_use,word,look):
             position+=1
             if i == letter:
                 count+=1
-                print(count)
                 look=look.split()
                 look[position-1] = i
                 look=" ".join(look)
-                print(look)
-
-                #hay que pensar como sustituir los _ por las letras
+        print(look)
         if count==len(word):
             print('''
-_____.___.________   ____ ___      __      __.___ _______   
-\__  |   |\_____  \ |    |   \    /  \    /  \   |\      \  
- /   |   | /   |   \|    |   /    \   \/\/   /   |/   |   \ 
- \____   |/    |    \    |  /      \        /|   /    |    \ 
- / ______|\_______  /______/        \__/\  / |___\____|__  /
- \/               \/                     \/              \/
+YYYYYYY       YYYYYYY     OOOOOOOOO     UUUUUUUU     UUUUUUUU                    WWWWWWWW                           WWWWWWWWIIIIIIIIIINNNNNNNN        NNNNNNNN
+Y:::::Y       Y:::::Y   OO:::::::::OO   U::::::U     U::::::U                    W::::::W                           W::::::WI::::::::IN:::::::N       N::::::N
+Y:::::Y       Y:::::Y OO:::::::::::::OO U::::::U     U::::::U                    W::::::W                           W::::::WI::::::::IN::::::::N      N::::::N
+Y::::::Y     Y::::::YO:::::::OOO:::::::OUU:::::U     U:::::UU                    W::::::W                           W::::::WII::::::IIN:::::::::N     N::::::N
+YYY:::::Y   Y:::::YYYO::::::O   O::::::O U:::::U     U:::::U                      W:::::W           WWWWW           W:::::W   I::::I  N::::::::::N    N::::::N
+   Y:::::Y Y:::::Y   O:::::O     O:::::O U:::::D     D:::::U                       W:::::W         W:::::W         W:::::W    I::::I  N:::::::::::N   N::::::N
+    Y:::::Y:::::Y    O:::::O     O:::::O U:::::D     D:::::U                        W:::::W       W:::::::W       W:::::W     I::::I  N:::::::N::::N  N::::::N
+     Y:::::::::Y     O:::::O     O:::::O U:::::D     D:::::U                         W:::::W     W:::::::::W     W:::::W      I::::I  N::::::N N::::N N::::::N
+      Y:::::::Y      O:::::O     O:::::O U:::::D     D:::::U                          W:::::W   W:::::W:::::W   W:::::W       I::::I  N::::::N  N::::N:::::::N
+       Y:::::Y       O:::::O     O:::::O U:::::D     D:::::U                           W:::::W W:::::W W:::::W W:::::W        I::::I  N::::::N   N:::::::::::N
+       Y:::::Y       O:::::O     O:::::O U:::::D     D:::::U                            W:::::W:::::W   W:::::W:::::W         I::::I  N::::::N    N::::::::::N
+       Y:::::Y       O::::::O   O::::::O U::::::U   U::::::U                             W:::::::::W     W:::::::::W          I::::I  N::::::N     N:::::::::N
+       Y:::::Y       O:::::::OOO:::::::O U:::::::UUU:::::::U                              W:::::::W       W:::::::W         II::::::IIN::::::N      N::::::::N
+    YYYY:::::YYYY     OO:::::::::::::OO   UU:::::::::::::UU                                W:::::W         W:::::W          I::::::::IN::::::N       N:::::::N
+    Y:::::::::::Y       OO:::::::::OO       UU:::::::::UU                                   W:::W           W:::W           I::::::::IN::::::N        N::::::N
+    YYYYYYYYYYYYY         OOOOOOOOO           UUUUUUUUU                                      WWW             WWW            IIIIIIIIIINNNNNNNN         NNNNNNN
 
             ''')
             return
@@ -42,11 +49,10 @@ def look_word(letter,word,look):
     else:
         print("la letra escojida no la tiene la palabra")
         alphab_not_use.remove(letter)
-        toy(a)
         print("")
         print(look)
+        toy(a)
         if a == 9:
-            print("Perdiste!!!!!!")
             return
         Inp_Letter(input("por favor ingresa una letra del alfabeto4 :").upper(),word,look)
         #inventarse lo del dibujo
@@ -176,14 +182,24 @@ def toy(b):
     ''')
         print('''  
 
-  ________    _____      _____  ___________ ____________   _________________________ 
- /  _____/   /  _  \    /     \ \_   _____/ \_____  \   \ /   /\_   _____/\______   \ 
-/   \  ___  /  /_\  \  /  \ /  \ |    __)_   /   |   \   Y   /  |    __)_  |       _/
-\    \_\  \/    |    \/    Y    \|        \ /    |    \     /   |        \ |    |   \ 
- \______  /\____|__  /\____|__  /_______  / \_______  /\___/   /_______  / |____|_  /
-        \/         \/         \/        \/          \/                 \/         \/ 
+        GGGGGGGGGGGGG               AAA               MMMMMMMM               MMMMMMMMEEEEEEEEEEEEEEEEEEEEEE                    OOOOOOOOO     VVVVVVVV           VVVVVVVVEEEEEEEEEEEEEEEEEEEEEERRRRRRRRRRRRRRRRR   
+     GGG::::::::::::G              A:::A              M:::::::M             M:::::::ME::::::::::::::::::::E                  OO:::::::::OO   V::::::V           V::::::VE::::::::::::::::::::ER::::::::::::::::R  
+   GG:::::::::::::::G             A:::::A             M::::::::M           M::::::::ME::::::::::::::::::::E                OO:::::::::::::OO V::::::V           V::::::VE::::::::::::::::::::ER::::::RRRRRR:::::R 
+  G:::::GGGGGGGG::::G            A:::::::A            M:::::::::M         M:::::::::MEE::::::EEEEEEEEE::::E               O:::::::OOO:::::::OV::::::V           V::::::VEE::::::EEEEEEEEE::::ERR:::::R     R:::::R
+ G:::::G       GGGGGG           A:::::::::A           M::::::::::M       M::::::::::M  E:::::E       EEEEEE               O::::::O   O::::::O V:::::V           V:::::V   E:::::E       EEEEEE  R::::R     R:::::R
+G:::::G                        A:::::A:::::A          M:::::::::::M     M:::::::::::M  E:::::E                            O:::::O     O:::::O  V:::::V         V:::::V    E:::::E               R::::R     R:::::R
+G:::::G                       A:::::A A:::::A         M:::::::M::::M   M::::M:::::::M  E::::::EEEEEEEEEE                  O:::::O     O:::::O   V:::::V       V:::::V     E::::::EEEEEEEEEE     R::::RRRRRR:::::R 
+G:::::G    GGGGGGGGGG        A:::::A   A:::::A        M::::::M M::::M M::::M M::::::M  E:::::::::::::::E                  O:::::O     O:::::O    V:::::V     V:::::V      E:::::::::::::::E     R:::::::::::::RR  
+G:::::G    G::::::::G       A:::::A     A:::::A       M::::::M  M::::M::::M  M::::::M  E:::::::::::::::E                  O:::::O     O:::::O     V:::::V   V:::::V       E:::::::::::::::E     R::::RRRRRR:::::R 
+G:::::G    GGGGG::::G      A:::::AAAAAAAAA:::::A      M::::::M   M:::::::M   M::::::M  E::::::EEEEEEEEEE                  O:::::O     O:::::O      V:::::V V:::::V        E::::::EEEEEEEEEE     R::::R     R:::::R
+G:::::G        G::::G     A:::::::::::::::::::::A     M::::::M    M:::::M    M::::::M  E:::::E                            O:::::O     O:::::O       V:::::V:::::V         E:::::E               R::::R     R:::::R
+ G:::::G       G::::G    A:::::AAAAAAAAAAAAA:::::A    M::::::M     MMMMM     M::::::M  E:::::E       EEEEEE               O::::::O   O::::::O        V:::::::::V          E:::::E       EEEEEE  R::::R     R:::::R
+  G:::::GGGGGGGG::::G   A:::::A             A:::::A   M::::::M               M::::::MEE::::::EEEEEEEE:::::E               O:::::::OOO:::::::O         V:::::::V         EE::::::EEEEEEEE:::::ERR:::::R     R:::::R
+   GG:::::::::::::::G  A:::::A               A:::::A  M::::::M               M::::::ME::::::::::::::::::::E                OO:::::::::::::OO           V:::::V          E::::::::::::::::::::ER::::::R     R:::::R
+     GGG::::::GGG:::G A:::::A                 A:::::A M::::::M               M::::::ME::::::::::::::::::::E                  OO:::::::::OO              V:::V           E::::::::::::::::::::ER::::::R     R:::::R
+        GGGGGG   GGGGAAAAAAA                   AAAAAAAMMMMMMMM               MMMMMMMMEEEEEEEEEEEEEEEEEEEEEE                    OOOOOOOOO                 VVV            EEEEEEEEEEEEEEEEEEEEEERRRRRRRR     RRRRRRR
         ''')
-
+        return
 
 
 
