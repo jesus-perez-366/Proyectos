@@ -1,5 +1,6 @@
 import random
 from string import ascii_uppercase
+from python3 import dibujo
 ascii_uppercase += 'Ñ'
 alphab=[i for i in ascii_uppercase]
 alphab_not_use=alphab
@@ -59,6 +60,7 @@ def look_word(letter,word,look):
         
 
 def look_alphab (letter,alphab,word,look):
+    hl.hola()
     if letter in alphab:
         look_word(letter,word,look)
 
