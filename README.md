@@ -1,13 +1,5 @@
-# Proyectos
+# <img src=imagenes/verdugo.gif width="100"> EL VERDUGO     <img src=imagenes/verdugo.gif width="100">  
 
-
- ##     ## ######## ########  ########  ##     ##  ######    #######  
- ##     ## ##       ##     ## ##     ## ##     ## ##    ##  ##     ## 
- ##     ## ##       ##     ## ##     ## ##     ## ##        ##     ## 
- ##     ## ######   ########  ##     ## ##     ## ##   #### ##     ## 
-  ##   ##  ##       ##   ##   ##     ## ##     ## ##    ##  ##     ## 
-   ## ##   ##       ##    ##  ##     ## ##     ## ##    ##  ##     ## 
-#   ###    ######## ##     ## ########   #######   ######    #######  
 
 ## Explicacion
    El verdugo o tambien conocido como el ahorcado es un juego que pone a trabajar tu capacidad deductiva, ya que la finalidad del juego es adivinar la palabra antes de que seas ahorcado.
