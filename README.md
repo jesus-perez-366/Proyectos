@@ -6,6 +6,10 @@
 
 ## Reglas
    Debe adivinar la palabra antes de alcanzar el numero de equivocaciones.
+<<<<<<< HEAD
+=======
+   
+>>>>>>> 389c20a56532a080a712df277b0bd31d9d70ad11
    Maximo numero de equivocaciones = 8.
 
 ## Instrucciones
