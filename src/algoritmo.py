@@ -3,7 +3,7 @@ import src.dibujo as do
 from string import ascii_uppercase
 ascii_uppercase += 'Ñ'
 alphab=[i for i in ascii_uppercase]
-alphab_not_use=alphab
+alphab_not_use=[i for i in ascii_uppercase]
 a=0
 def Inp_Letter(letter,word,look):
     """
@@ -18,13 +18,17 @@ def Inp_Letter(letter,word,look):
         None
     """
     global a
-    if len(letter) == 1 and letter in alphab and letter in word:
+    global alphab_not_use
+
+    if len(letter) == 1 and letter in alphab_not_use and letter in word:
         look_alpha_not_use(letter, alphab_not_use,word,look)
 
     elif len(letter) == 1 and letter in alphab and letter not in word:
         a+=1
         rem_and_print(letter,look)
         if a == 8:
+            a=0
+            alphab_not_use=[i for i in ascii_uppercase]
             return
         space()
         Inp_Letter(input("por favor ingresa una letra del alfabeto: ").upper(),word,look)
@@ -55,6 +59,8 @@ def rem_and_print(letter, look):
 
 
 def verif_use_letter(letter,word,look):
+    global a
+    global alphab_not_use
     '''
     Determina si la letra ingresada fue usada anteriormente, si ingreso algo distinto a una letra 
     y que solo haya sido una letra.
@@ -85,7 +91,9 @@ def verif_use_letter(letter,word,look):
     space()
     do.lose(a,letter,alphab_not_use)
     if a == 8:
-            return
+        alphab_not_use=[i for i in ascii_uppercase]
+        a=0
+        return
     space()
     Inp_Letter(input("por favor ingresa una letra del alfabeto: ").upper(),word,look)
 
@@ -109,22 +117,25 @@ def look_alpha_not_use(letter, alphab_not_use,word,look):
         str = indicado que ha perdido
 
     """
-
-    if letter in alphab_not_use:
-        alphab_not_use.remove(letter)
-        look2=[i if i == letter else "_" for i in word]
-        list(map(lambda x, y: x if y=="_" else y, look,look2))
-        look=" ".join(list(map(lambda x, y: x if y=="_" else y, look.split(),look2)))
-        space()
-        print(f'              {look}')
-        space()
-        do.lose(a,letter,alphab_not_use)
-        if a == 8:
-            return
-        elif "".join(look.split())==word:
-            do.win()
-            return
-        Inp_Letter(input("por favor ingresa una letra del alfabeto: ").upper(),word,look)
+    global a
+    alphab_not_use.remove(letter)
+    look2=[i if i == letter else "_" for i in word]
+    list(map(lambda x, y: x if y=="_" else y, look,look2))
+    look=" ".join(list(map(lambda x, y: x if y=="_" else y, look.split(),look2)))
+    space()
+    print(f'              {look}')
+    space()
+    do.lose(a,letter,alphab_not_use)
+    if a == 8:
+        alphab_not_use=[i for i in ascii_uppercase]
+        a=0
+        return
+    elif "".join(look.split())==word:
+        do.win()
+        alphab_not_use=[i for i in ascii_uppercase]
+        a=0
+        return
+    Inp_Letter(input("por favor ingresa una letra del alfabeto: ").upper(),word,look)
 
 
 def space():
