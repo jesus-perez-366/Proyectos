@@ -5,8 +5,18 @@ ascii_uppercase += 'Ñ'
 alphab=[i for i in ascii_uppercase]
 alphab_not_use=alphab
 a=0
-
 def Inp_Letter(letter,word,look):
+    """
+    Determina si la letra ingresada por el usuariose encuentra en el alfabeto, 
+    en la palabra a adivinar y verifica si lo que ingreso el usuario sea
+    unicamente y una sola letra del alfabeto
+    Args:
+        letter (str): letra ingresada por el jugador
+        word (str): palabra que se debe adivinar
+        look (str): es la palabra pero cada letra representada por "_"
+    Returns:
+        None
+    """
     global a
     if len(letter) == 1 and letter in alphab and letter in word:
         look_alpha_not_use(letter, alphab_not_use,word,look)
@@ -25,6 +35,15 @@ def Inp_Letter(letter,word,look):
 
 
 def rem_and_print(letter, look):
+    """
+    La letra no esta en la palabra por lo tanto se remueve  del alfabeton para asi garntizar
+    que el usuario no repita la letra, ademas hace print del muñeco que sera ahorcado
+    Args:
+        letter (str): letra ingresada por el jugador
+        look (str): es la palabra pero cada letra representada por "_"
+    Returns:
+        None
+    """
     global a
     print("la letra escojida no se encuentra en la palabra")
     space()
@@ -36,17 +55,31 @@ def rem_and_print(letter, look):
 
 
 def verif_use_letter(letter,word,look):
-    if len(letter) == 1:
+    '''
+    Determina si la letra ingresada fue usada anteriormente, si ingreso algo distinto a una letra 
+    y que solo haya sido una letra.
 
+    Ademas si la letra es la primera vez usada y como no esta en la palabra a adivinar entonces se
+    remueve de alfabeto, muestra el muñeco que sera ahorcado.
+
+    verifica por ultimo si el usuario perdio
+
+    Args:
+        letter (str): letra ingresada por el jugador
+        word (str): palabra que se debe adivinar
+        look (str): es la palabra pero cada letra representada por "_"
+    Returns:
+        si perdio
+        str = indicado que ha perdido
+
+    '''
+    if len(letter) == 1:
         if letter not in alphab_not_use:
-            print("Esta letra usted ya la uso o coloco un caracter especial")
-               
+            print("Esta letra usted ya la uso o coloco un caracter especial")            
         else: 
-            print("Ha ingresado un numero ")
-        
+            print("Ha ingresado un numero ")    
     else:
-        print("usted ha colocado mas de una letra o numeros")
-    
+        print("usted ha colocado mas de una letra o numeros")  
     space()
     print(f'              {look}')
     space()
@@ -59,6 +92,24 @@ def verif_use_letter(letter,word,look):
 
 
 def look_alpha_not_use(letter, alphab_not_use,word,look):
+    """
+    Verifica que no se haya usado la letra y entonces la remueve del alfabeto, 
+    ademas actualiza la variable "look" para que el usuario visualice las palabras 
+    que lleva y que le faltan. Tambien verifica si el usuarion adivino la 
+    Args:
+        letter (str): letra ingresada por el jugador
+        alphab_not_use (list): son las letras que no ha colocado el usuario
+        word (str): palabra que se debe adivinar
+        look (str): es la palabra pero cada letra representada por "_"
+    Returns:
+        si gana
+        str = indicado que es el ganador
+
+        si pierde
+        str = indicado que ha perdido
+
+    """
+
     if letter in alphab_not_use:
         alphab_not_use.remove(letter)
         look2=[i if i == letter else "_" for i in word]
@@ -70,7 +121,6 @@ def look_alpha_not_use(letter, alphab_not_use,word,look):
         do.lose(a,letter,alphab_not_use)
         if a == 8:
             return
-        space()
         elif "".join(look.split())==word:
             do.win()
             return
@@ -78,6 +128,12 @@ def look_alpha_not_use(letter, alphab_not_use,word,look):
 
 
 def space():
+    ''' 
+    Genera 3 espacio a lo vertical, no requiere de argumentos
+
+    return:
+        None
+    '''
     print(" ")
     print(" ") 
     print(" ")

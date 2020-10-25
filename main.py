@@ -1,5 +1,8 @@
 import random
 import src.algoritmo as alg
+import src.dibujo as do
+do.incio()
+alg.space()
 User_name=input("Ingresar su Nombre: ")
 alg.space()
 print(f"Es momento de jugar {User_name}, espero que este preparado para el reto")
