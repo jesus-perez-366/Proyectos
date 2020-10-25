@@ -5,8 +5,9 @@
    El verdugo o tambien conocido como el ahorcado es un juego que pone a trabajar tu capacidad deductiva, ya que la finalidad del juego es adivinar la palabra antes de que seas ahorcado.
 
 ## Reglas
-   Debe adivinar la palabra antes de alcanzar el numero de equivocaciones
-   Maximo numero de equivocaciones = 8
+   Debe adivinar la palabra antes de alcanzar el numero de equivocaciones.
+   
+   Maximo numero de equivocaciones = 8.
 
 ## Instrucciones
 1. El juego se incia y solicita un nombre.
