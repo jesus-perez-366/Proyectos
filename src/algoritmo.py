@@ -17,7 +17,7 @@ def Inp_Letter(letter,word,look):
         if a == 8:
             return
         space()
-        Inp_Letter(input("por favor ingresa una letra del alfabeto4 :").upper(),word,look)
+        Inp_Letter(input("por favor ingresa una letra del alfabeto: ").upper(),word,look)
 
     elif len(letter) == 1 or letter not in alphab:
         verif_use_letter(letter,word,look)
@@ -32,11 +32,7 @@ def rem_and_print(letter, look):
     space()
     alphab_not_use.remove(letter)
     do.lose(a,letter,alphab_not_use)
-    
-
-
-
-        
+         
 
 
 def verif_use_letter(letter,word,look):
@@ -58,7 +54,7 @@ def verif_use_letter(letter,word,look):
     if a == 8:
             return
     space()
-    Inp_Letter(input("por favor ingresa una letra del alfabeto5 :").upper(),word,look)
+    Inp_Letter(input("por favor ingresa una letra del alfabeto: ").upper(),word,look)
 
 
 
@@ -75,10 +71,10 @@ def look_alpha_not_use(letter, alphab_not_use,word,look):
         if a == 8:
             return
         space()
-        if "".join(look.split())==word:
+        elif "".join(look.split())==word:
             do.win()
             return
-        Inp_Letter(input("por favor ingresa una letra del alfabeto2 :").upper(),word,look)
+        Inp_Letter(input("por favor ingresa una letra del alfabeto: ").upper(),word,look)
 
 
 def space():
