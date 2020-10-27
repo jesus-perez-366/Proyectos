@@ -7,7 +7,7 @@ User_name=input("Ingresar su Nombre: ")
 alg.space()
 print(f"Es momento de jugar {User_name}, espero que este preparado para el reto")
 alg.space()
-print('''ahora es tu turno de empezar adivinar la palabra''')
+print('''ahora es tu turno de empezar adivinar la palabra.''')
 alg.space()
 c=open("lista_palabras.txt")
 word_list=[]

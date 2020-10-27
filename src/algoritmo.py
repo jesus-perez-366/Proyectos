@@ -9,7 +9,7 @@ def Inp_Letter(letter,word,look):
     """
     Determina si la letra ingresada por el usuariose encuentra en el alfabeto, 
     en la palabra a adivinar y verifica si lo que ingreso el usuario sea
-    unicamente y una sola letra del alfabeto
+    unicamente y una sola letra del alfabeto.
     Args:
         letter (str): letra ingresada por el jugador
         word (str): palabra que se debe adivinar
