@@ -10,25 +10,23 @@ def incio():
    ''')
 def win ():
     print('''
-
 ##    ##  #######  ##     ##       ##      ## #### ##    ## 
  ##  ##  ##     ## ##     ##       ##  ##  ##  ##  ###   ## 
   ####   ##     ## ##     ##       ##  ##  ##  ##  ####  ## 
    ##    ##     ## ##     ##       ##  ##  ##  ##  ## ## ## 
    ##    ##     ## ##     ##       ##  ##  ##  ##  ##  #### 
    ##    ##     ## ##     ##       ##  ##  ##  ##  ##   ### 
-   ##     #######   #######         ###  ###  #### ##    ## .
-
+   ##     #######   #######         ###  ###  #### ##    ## 
             ''')
 
-def lose (b, letter, alphab_not_use):
-    if b == 1 and letter not in alphab_not_use:
+def lose (b, letter):
+    if b == 1:
         print('''
     ________________________
     ''')
 
         
-    elif b == 2 and letter not in alphab_not_use:
+    elif b == 2:
         print(''' 
                 |
                 |
@@ -39,7 +37,7 @@ def lose (b, letter, alphab_not_use):
     ____________|____________
     ''')
                     
-    elif b == 3 and letter not in alphab_not_use:
+    elif b == 3:
         print('''   
                 _____________
                 |
@@ -52,7 +50,7 @@ def lose (b, letter, alphab_not_use):
     ''')
 
 
-    elif b == 4 and letter not in alphab_not_use:
+    elif b == 4:
         print('''   
                 _____________
                 |            O
@@ -64,7 +62,7 @@ def lose (b, letter, alphab_not_use):
     ____________|____________
     ''')
 
-    elif b == 5 and letter not in alphab_not_use:
+    elif b == 5:
         print('''   
                 _____________
                 |            O
@@ -76,7 +74,7 @@ def lose (b, letter, alphab_not_use):
     ____________|____________
     ''')
 
-    elif b == 6 and letter not in alphab_not_use:
+    elif b == 6:
         print('''   
                 _____________
                 |            O
@@ -88,7 +86,7 @@ def lose (b, letter, alphab_not_use):
     ____________|____________
     ''')
 
-    elif b == 7 and letter not in alphab_not_use:
+    elif b == 7:
         print('''
                 _____________
                 |            O
@@ -100,7 +98,7 @@ def lose (b, letter, alphab_not_use):
     ____________|____________
     ''')
 
-    elif b == 8 and letter not in alphab_not_use:
+    elif b == 8:
         print('''   
                 _______________
                 |          |_O_|
@@ -112,7 +110,6 @@ def lose (b, letter, alphab_not_use):
     ____________|____________
     ''')
         print(''' 
-
  ######      ###    ##     ## ########     #######  ##     ## ######## ########  
 ##    ##    ## ##   ###   ### ##          ##     ## ##     ## ##       ##     ## 
 ##         ##   ##  #### #### ##          ##     ## ##     ## ##       ##     ## 
@@ -121,10 +118,5 @@ def lose (b, letter, alphab_not_use):
 ##    ##  ##     ## ##     ## ##          ##     ##   ## ##   ##       ##    ##  
  ######   ##     ## ##     ## ########     #######     ###    ######## ##     ## 
  
-
        ''')
         
-
-    
-
-    

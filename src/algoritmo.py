@@ -5,159 +5,136 @@ ascii_uppercase += 'Ñ'
 alphab=[i for i in ascii_uppercase]
 alphab_not_use=[i for i in ascii_uppercase]
 a=0
-def Inp_Letter(letter,word,look):
+look=str
+word=str
+def word_list():
+    do.incio()
+    User_name=input("Ingresar su Nombre: ")
+    print(f"Es momento de jugar {User_name}, espero que este preparado para el reto \ ahora es tu turno de empezar adivinar la palabra")
+    print('''ahora es tu turno de empezar adivinar la palabra''')
+    c=open("lista_palabras.txt")
+    word_list=[]
+    archivo = open("lista_palabras.txt")
+    for linea in archivo.readlines():
+        word_list.append(linea)  
+    archivo.close()
+    return [s.rstrip('\n') for s in word_list]
+    
+
+def inicio (word_list):
+    global look, word
+    word=random.choice(word_list).upper()
+    look="_ "*len(word)
+    print(f'              {look}')
+
+def Inp_Letter(letter):
     """
     Determina si la letra ingresada por el usuariose encuentra en el alfabeto, 
     en la palabra a adivinar y verifica si lo que ingreso el usuario sea
-    unicamente y una sola letra del alfabeto.
+    unicamente y una sola letra del alfabeto
     Args:
         letter (str): letra ingresada por el jugador
-        word (str): palabra que se debe adivinar
-        look (str): es la palabra pero cada letra representada por "_"
     Returns:
         None
     """
-    global a
-    global alphab_not_use
+    global a, alphab_not_use, look, word
+    if letter in alphab_not_use and letter in word:
+        look_alpha_not_use(letter)
 
-    if len(letter) == 1 and letter in alphab_not_use and letter in word:
-        look_alpha_not_use(letter, alphab_not_use,word,look)
-
-    elif len(letter) == 1 and letter in alphab and letter not in word:
-        a+=1
-        rem_and_print(letter,look)
+    elif len(letter) == 1 and letter not in word:
+        rem_and_print(letter)
         if a == 8:
-            a=0
-            alphab_not_use=[i for i in ascii_uppercase]
+            out()
             return
-        space()
-        Inp_Letter(input("por favor ingresa una letra del alfabeto: ").upper(),word,look)
 
-    elif len(letter) == 1 or letter not in alphab:
-        verif_use_letter(letter,word,look)
+        Inp_Letter(input("por favor ingresa una letra del alfabeto: ").upper())
+
+    elif letter not in alphab_not_use:
+        verif_use_letter(letter)
 
 
 
-def rem_and_print(letter, look):
+def rem_and_print(letter):
     """
     La letra no esta en la palabra por lo tanto se remueve  del alfabeton para asi garntizar
     que el usuario no repita la letra, ademas hace print del muñeco que sera ahorcado
     Args:
         letter (str): letra ingresada por el jugador
-        look (str): es la palabra pero cada letra representada por "_"
     Returns:
         None
     """
-    global a
+    global a, look, word, alphab_not_use
     print("la letra escojida no se encuentra en la palabra")
-    space()
     print(f'              {look}')
-    space()
-    alphab_not_use.remove(letter)
-    do.lose(a,letter,alphab_not_use)
+    if letter in alphab_not_use:
+        a+=1
+        alphab_not_use.remove(letter)
+        do.lose(a,letter)
+    pass
          
 
 
-def verif_use_letter(letter,word,look):
-    global a
-    global alphab_not_use
+def verif_use_letter(letter):
+    global a, alphab_not_use, look, word
     '''
     Determina si la letra ingresada fue usada anteriormente, si ingreso algo distinto a una letra 
     y que solo haya sido una letra.
-
     Ademas si la letra es la primera vez usada y como no esta en la palabra a adivinar entonces se
     remueve de alfabeto, muestra el muñeco que sera ahorcado.
-
     verifica por ultimo si el usuario perdio
-
     Args:
         letter (str): letra ingresada por el jugador
-        word (str): palabra que se debe adivinar
-        look (str): es la palabra pero cada letra representada por "_"
     Returns:
         si perdio
-        str = indicado que ha perdido
-
+        str = game over
     '''
     if len(letter) == 1:
-        if letter not in alphab_not_use:
-            print("Esta letra usted ya la uso o coloco un caracter especial")            
-        else: 
-            print("Ha ingresado un numero ")    
+        print("ya ingreso esta letra o ha colocado un numero")    
     else:
         print("usted ha colocado mas de una letra o numeros")  
-    space()
     print(f'              {look}')
-    space()
-    do.lose(a,letter,alphab_not_use)
+    do.lose(a,letter)
     if a == 8:
-        alphab_not_use=[i for i in ascii_uppercase]
-        a=0
+        out()
         return
-    space()
-    Inp_Letter(input("por favor ingresa una letra del alfabeto: ").upper(),word,look)
+    Inp_Letter(input("por favor ingresa una letra del alfabeto: ").upper())
 
 
 
-def look_alpha_not_use(letter, alphab_not_use,word,look):
+def look_alpha_not_use(letter):
     """
     Verifica que no se haya usado la letra y entonces la remueve del alfabeto, 
     ademas actualiza la variable "look" para que el usuario visualice las palabras 
     que lleva y que le faltan. Tambien verifica si el usuarion adivino la 
     Args:
         letter (str): letra ingresada por el jugador
-        alphab_not_use (list): son las letras que no ha colocado el usuario
-        word (str): palabra que se debe adivinar
-        look (str): es la palabra pero cada letra representada por "_"
     Returns:
         si gana
-        str = indicado que es el ganador
-
+        str = you win
         si pierde
-        str = indicado que ha perdido
-
+        str = game over
     """
-    global a
+    global a, look, word, alphab_not_use
     alphab_not_use.remove(letter)
     look2=[i if i == letter else "_" for i in word]
     list(map(lambda x, y: x if y=="_" else y, look,look2))
     look=" ".join(list(map(lambda x, y: x if y=="_" else y, look.split(),look2)))
-    space()
     print(f'              {look}')
-    space()
-    do.lose(a,letter,alphab_not_use)
+    do.lose(a,letter)
     if a == 8:
-        alphab_not_use=[i for i in ascii_uppercase]
-        a=0
+        out()
         return
     elif "".join(look.split())==word:
         do.win()
-        alphab_not_use=[i for i in ascii_uppercase]
-        a=0
+        out()
         return
-    Inp_Letter(input("por favor ingresa una letra del alfabeto: ").upper(),word,look)
+    Inp_Letter(input("por favor ingresa una letra del alfabeto: ").upper())
 
 
-def space():
-    ''' 
-    Genera 3 espacio a lo vertical, no requiere de argumentos
-
-    return:
-        None
-    '''
-    print(" ")
-    print(" ") 
-    print(" ")
-
-
-
-
-
-        
-
-
-
-    
-
+def out():
+    global alphab_not_use, a
+    alphab_not_use=[i for i in ascii_uppercase]
+    a=0
+    print(f"La palabra era {word}")
 
 
